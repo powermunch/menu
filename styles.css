@@ -1,6 +1,6 @@
 :root {
   --navy: #091c54;
-  --blue: #4bb4e6;
+  --blue: #2590cf;
   --red: #c72a29;
   --yellow: #fee887;
 
@@ -65,24 +65,69 @@ body {
 }
 
 .logo {
-  width: 220px; /* Increased size to make logo appear larger */
-  height: 220px; /* Equal to width for perfect circle */
+  width: 220px;
+  height: 220px;
   margin: 20px auto;
-  border-radius: 50%; /* Make container perfectly round */
-  overflow: hidden; /* Hide anything outside the circle */
+  border-radius: 50%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0; /* Remove any padding */
-  background-color: transparent; /* Remove background color */
+  padding: 0;
+  position: relative;
+  box-shadow: 0 0 40px rgba(37, 144, 207, 0.5); /* Outer glow */
+  animation: pulse-light 3s infinite;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(37, 144, 207, 0.4) 0%,
+    rgba(9, 28, 84, 0) 70%
+  );
+  mix-blend-mode: screen;
+  animation: inner-light 3s infinite alternate;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .logo img {
-  width: 138%; /* Slightly larger than container to eliminate border */
-  height: 138%; /* Keep proportional */
-  object-fit: cover; /* Crop the image to fill the container */
-  border-radius: 50%; /* Ensure the image itself is also rounded */
-  object-position: center; /* Ensure centering */
+  width: 138%;
+  height: 138%;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes pulse-light {
+  0% {
+    box-shadow: 0 0 15px rgba(9, 28, 84, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(37, 144, 207, 0.8),
+      0 0 50px rgba(37, 144, 207, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(9, 28, 84, 0.6);
+  }
+}
+
+@keyframes inner-light {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.7;
+  }
 }
 
 .title {
