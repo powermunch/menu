@@ -1,372 +1,379 @@
 :root {
-    --navy: #091C54;
-    --blue: #4BB4E6;
-    --red: #C72A29;
-    --yellow: #FEE887;
-    
-    /* Light mode variables */
-    --bg-color: #f5f5f5;
-    --text-color: #333;
-    --button-color: var(--blue);
-    --button-text: var(--navy);
-    --modal-bg: white;
-    --subtitle-color: #666;
-    --footer-color: #888;
-    --button-hover: var(--yellow);
-    --table-border: #ddd;
-    --table-header: #f2f2f2;
-    --nutrition-label-bg: #fff;
-    --nutrition-label-border: #333;
-    --nutrition-header-bg: var(--blue);
-    --nutrition-header-text: white;
+  --navy: #091c54;
+  --blue: #4bb4e6;
+  --red: #c72a29;
+  --yellow: #fee887;
+
+  /* Light mode variables */
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --button-color: var(--blue);
+  --button-text: var(--navy);
+  --modal-bg: white;
+  --subtitle-color: #666;
+  --footer-color: #888;
+  --button-hover: var(--yellow);
+  --table-border: #ddd;
+  --table-header: #f2f2f2;
+  --nutrition-label-bg: #fff;
+  --nutrition-label-border: #333;
+  --nutrition-header-bg: var(--blue);
+  --nutrition-header-text: white;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: var(--navy);
-        --text-color: white;
-        --button-color: var(--blue);
-        --button-text: white;
-        --modal-bg: #132347;
-        --subtitle-color: #b0b0b0;
-        --footer-color: #b0b0b0;
-        --button-hover: var(--yellow);
-        --table-border: #444;
-        --table-header: #1f3054;
-        --nutrition-label-bg: #1f3054;
-        --nutrition-label-border: #4BB4E6;
-        --nutrition-header-bg: #4BB4E6;
-        --nutrition-header-text: var(--navy);
-    }
+  :root {
+    --bg-color: var(--navy);
+    --text-color: white;
+    --button-color: var(--blue);
+    --button-text: white;
+    --modal-bg: #132347;
+    --subtitle-color: #b0b0b0;
+    --footer-color: #b0b0b0;
+    --button-hover: var(--yellow);
+    --table-border: #444;
+    --table-header: #1f3054;
+    --nutrition-label-bg: #1f3054;
+    --nutrition-label-border: #4bb4e6;
+    --nutrition-header-bg: #4bb4e6;
+    --nutrition-header-text: var(--navy);
+  }
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
-    max-width: 450px;
-    width: 100%;
-    text-align: center;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
 }
 
 .logo {
-    width: 220px; /* Increased size to make logo appear larger */
-    height: 220px; /* Equal to width for perfect circle */
-    margin: 20px auto;
-    border-radius: 50%; /* Make container perfectly round */
-    overflow: hidden; /* Hide anything outside the circle */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0; /* Remove any padding */
-    background-color: transparent; /* Remove background color */
+  width: 220px; /* Increased size to make logo appear larger */
+  height: 220px; /* Equal to width for perfect circle */
+  margin: 20px auto;
+  border-radius: 50%; /* Make container perfectly round */
+  overflow: hidden; /* Hide anything outside the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Remove any padding */
+  background-color: transparent; /* Remove background color */
 }
 
 .logo img {
-    width: 130%; /* Slightly larger than container to eliminate border */
-    height: 130%; /* Keep proportional */
-    object-fit: cover; /* Crop the image to fill the container */
-    border-radius: 50%; /* Ensure the image itself is also rounded */
-    object-position: center; /* Ensure centering */
+  width: 138%; /* Slightly larger than container to eliminate border */
+  height: 138%; /* Keep proportional */
+  object-fit: cover; /* Crop the image to fill the container */
+  border-radius: 50%; /* Ensure the image itself is also rounded */
+  object-position: center; /* Ensure centering */
 }
 
 .title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: var(--text-color);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--red);
 }
 
 .subtitle {
-    font-size: 1rem;
-    margin-bottom: 30px;
-    color: var(--subtitle-color);
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--yellow);
 }
 
 .button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
 }
 
 .button {
-    background-color: var(--button-color);
-    color: var(--button-text);
-    padding: 15px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
-    border: none;
-    font-size: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--button-color);
+  color: var(--button-text);
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
-    background-color: var(--button-hover);
-    transform: translateY(-2px);
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
 }
 
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .modal {
-    background-color: var(--modal-bg);
-    padding: 25px;
-    border-radius: 15px;
-    max-width: 500px;
-    width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-    position: relative;
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--modal-bg);
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .modal-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--subtitle-color);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--subtitle-color);
 }
 
 .modal-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: var(--text-color);
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--text-color);
 }
 
 .modal-content {
-    font-size: 16px;
-    line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
 }
 
 .social-link {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    transition: transform 0.2s;
-    font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.2s;
+  font-size: 20px;
 }
 
 .instagram-link {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
 }
 
 .whatsapp-link {
-    background-color: #25D366;
+  background-color: #25d366;
 }
 
 .social-link:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 footer {
-    margin-top: 40px;
-    font-size: 14px;
-    color: var(--footer-color);
-    width: 100%;
-    text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--footer-color);
+  width: 100%;
+  text-align: center;
 }
 
 footer a {
-    color: var(--blue);
-    text-decoration: none;
+  color: var(--blue);
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* NUTRITION FACTS STYLING */
 .nutrition-facts {
-    max-width: 400px;
-    margin: 20px auto;
-    border: 2px solid var(--nutrition-label-border);
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: var(--nutrition-label-bg);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+  border: 2px solid var(--nutrition-label-border);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--nutrition-label-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nutrition-header {
-    background-color: var(--nutrition-header-bg);
-    color: var(--nutrition-header-text);
-    padding: 12px 15px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
+  background-color: var(--nutrition-header-bg);
+  color: var(--nutrition-header-text);
+  padding: 12px 15px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .nutrition-content {
-    padding: 15px;
+  padding: 15px;
 }
 
 .serving-info {
-    font-size: 14px;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--table-border);
+  font-size: 14px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--table-border);
 }
 
 .nutrition-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 14px;
 }
 
 .calories-row {
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 0;
-    border-bottom: 5px solid var(--nutrition-label-border);
-    margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 0;
+  border-bottom: 5px solid var(--nutrition-label-border);
+  margin-bottom: 10px;
 }
 
 .daily-value-header {
-    text-align: right;
-    font-weight: bold;
-    font-size: 12px;
-    margin-bottom: 8px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 8px;
 }
 
 .main-nutrient {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .sub-nutrient {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .sub-sub-nutrient {
-    padding-left: 35px;
+  padding-left: 35px;
 }
 
 .divider {
-    border-bottom: 1px solid var(--table-border);
-    margin: 5px 0;
+  border-bottom: 1px solid var(--table-border);
+  margin: 5px 0;
 }
 
 .thick-divider {
-    border-bottom: 4px solid var(--table-border);
-    margin: 10px 0;
+  border-bottom: 4px solid var(--table-border);
+  margin: 10px 0;
 }
 
 .medium-divider {
-    border-bottom: 2px solid var(--table-border);
-    margin: 8px 0;
+  border-bottom: 2px solid var(--table-border);
+  margin: 8px 0;
 }
 
 .nutrition-footer {
-    font-size: 10px;
-    padding-top: 10px;
-    margin-top: 10px;
-    border-top: 1px solid var(--table-border);
+  font-size: 10px;
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid var(--table-border);
 }
 
 .nutrition-note {
-    font-style: italic;
-    font-size: 11px;
-    margin-top: 8px;
-    text-align: center;
+  font-style: italic;
+  font-size: 11px;
+  margin-top: 8px;
+  text-align: center;
 }
 
 /* Media queries for better responsiveness */
 @media screen and (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-    
-    .logo {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .title {
-        font-size: 1.5rem;
-    }
-    
-    .subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .button {
-        padding: 12px 15px;
-        font-size: 14px;
-    }
-    
-    .modal {
-        padding: 15px;
-        width: 95%;
-    }
-    
-    .modal-title {
-        font-size: 18px;
-    }
-    
-    .modal-content {
-        font-size: 14px;
-    }
-    
-    .nutrition-facts {
-        max-width: 100%;
-    }
-    
-    .nutrition-header {
-        font-size: 18px;
-        padding: 10px;
-    }
-    
-    .nutrition-row {
-        font-size: 13px;
-    }
-    
-    .calories-row {
-        font-size: 16px;
-    }
+  .container {
+    padding: 10px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .modal {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .modal-title {
+    font-size: 18px;
+  }
+
+  .modal-content {
+    font-size: 14px;
+  }
+
+  .nutrition-facts {
+    max-width: 100%;
+  }
+
+  .nutrition-header {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .nutrition-row {
+    font-size: 13px;
+  }
+
+  .calories-row {
+    font-size: 16px;
+  }
 }
