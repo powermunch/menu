@@ -363,7 +363,9 @@ footer a:hover {
   .italic {
     color: var(--yellow);
   }
-
+  .cal {
+    color: var(--red);
+  }
   .title {
     font-size: 1.5rem;
   }
