@@ -360,6 +360,10 @@ footer a:hover {
     height: 120px;
   }
 
+  .italic {
+    color: var(--yellow);
+  }
+
   .title {
     font-size: 1.5rem;
   }

@@ -16,22 +16,16 @@
         <img src="logo.jpg" alt="Power Munch Logo" />
       </div>
 
-      <h1 class="title">Power Munch</h1>
-      <p class="subtitle">Munch Down Power Up!</p>
-
+      <h1 class="title">Munch Down, Power Up!</h1>
+      <br />
       <div class="button-container">
         <button class="button" onclick="openModal('about')">About Us</button>
         <button class="button" onclick="openModal('products')">
           Our Products
         </button>
-        <button class="button" onclick="openModal('nutrition')">
-          Nutrition Facts
-        </button>
+
         <button class="button" onclick="openModal('ingredients')">
           Ingredients
-        </button>
-        <button class="button" onclick="openModal('contact')">
-          Contact Us
         </button>
       </div>
 
@@ -44,7 +38,7 @@
           <i class="fab fa-instagram"></i>
         </a>
         <a
-          href="https://wa.me/+96176172074"
+          href="https://wa.me/+96171786689"
           class="social-link whatsapp-link"
           aria-label="WhatsApp"
         >
@@ -75,9 +69,7 @@
         about: {
           title: "About Power Munch",
           content: `
-                    <p>Power Munch was created with a simple mission: to provide delicious, nutritious energy bites that fuel your active lifestyle without compromising on taste.</p>
-                    <p>Our team of nutritionists and food enthusiasts have crafted the perfect balance of proteins, healthy fats, and complex carbohydrates to give you sustained energy throughout your day.</p>
-                    <p>Whether you're an athlete, busy professional, or simply someone who cares about what goes into your body, Power Munch has got you covered with convenient, tasty power bites.</p>
+                    <p>Delicious, nutritious energy bites for your active life. Expertly balanced for sustained energy, our bites fuel athletes, professionals, and anyone who cares about quality.</p>
                 `,
         },
         products: {
@@ -90,142 +82,15 @@
                     <p><strong>Coffee Energizer Bite</strong> - Contains natural caffeine from coffee beans for an extra energy boost.</p>
                 `,
         },
-        nutrition: {
-          //title: "Nutrition Facts",
-          content: `
-                    <div class="nutrition-facts">
-                        <div class="nutrition-header">Nutrition Facts</div>
-                        <div class="nutrition-content">
-                            <div class="serving-info">
-                                <strong>Serving Size:</strong> 1 bite (40g)
-                            </div>
-                            
-                            <div class="calories-row nutrition-row">
-                                <div>Calories</div>
-                                <div>160</div>
-                            </div>
-                            
-                            <div class="daily-value-header">% Daily Value*</div>
-                            
-                            <div class="nutrition-row main-nutrient">
-                                <div><strong>Total Fat</strong> 9g</div>
-                                <div>12%</div>
-                            </div>
-                            
-                            <div class="nutrition-row sub-nutrient">
-                                <div>Saturated Fat 2g</div>
-                                <div>10%</div>
-                            </div>
-                            
-                            <div class="nutrition-row sub-nutrient">
-                                <div>Trans Fat 0g</div>
-                                <div></div>
-                            </div>
-                            
-                            <div class="divider"></div>
-                            
-                            <div class="nutrition-row main-nutrient">
-                                <div><strong>Cholesterol</strong> 0mg</div>
-                                <div>0%</div>
-                            </div>
-                            
-                            <div class="divider"></div>
-                            
-                            <div class="nutrition-row main-nutrient">
-                                <div><strong>Sodium</strong> 15mg</div>
-                                <div>1%</div>
-                            </div>
-                            
-                            <div class="divider"></div>
-                            
-                            <div class="nutrition-row main-nutrient">
-                                <div><strong>Total Carbohydrates</strong> 18g</div>
-                                <div>7%</div>
-                            </div>
-                            
-                            <div class="nutrition-row sub-nutrient">
-                                <div>Dietary Fiber 3g</div>
-                                <div>11%</div>
-                            </div>
-                            
-                            <div class="nutrition-row sub-nutrient">
-                                <div>Total Sugars 12g</div>
-                                <div></div>
-                            </div>
-                            
-                            <div class="nutrition-row sub-sub-nutrient">
-                                <div>Includes 8g Added Sugars</div>
-                                <div>16%</div>
-                            </div>
-                            
-                            <div class="divider"></div>
-                            
-                            <div class="nutrition-row main-nutrient">
-                                <div><strong>Protein</strong> 5g</div>
-                                <div>10%</div>
-                            </div>
-                            
-                            <div class="medium-divider"></div>
-                            
-                            <div class="nutrition-row">
-                                <div>Vitamin D 0mcg</div>
-                                <div>0%</div>
-                            </div>
-                            
-                            <div class="divider"></div>
-                            
-                            <div class="nutrition-row">
-                                <div>Calcium 40mg</div>
-                                <div>3%</div>
-                            </div>
-                            
-                            <div class="divider"></div>
-                            
-                            <div class="nutrition-row">
-                                <div>Iron 1.2mg</div>
-                                <div>6%</div>
-                            </div>
-                            
-                            <div class="divider"></div>
-                            
-                            <div class="nutrition-row">
-                                <div>Potassium 160mg</div>
-                                <div>3%</div>
-                            </div>
-                            
-                            <div class="nutrition-footer">
-                                * The % Daily Value tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.
-                            </div>
-                            
-                            <div class="nutrition-note">
-                                *Nutrition facts may vary slightly by flavor
-                            </div>
-                        </div>
-                    </div>
-                `,
-        },
+
         ingredients: {
           title: "Ingredients",
           content: `
-                    <p><strong>Original Power Bite:</strong> Dates, almonds, cashews, pumpkin seeds, sunflower seeds, coconut oil, vanilla extract, sea salt.</p>
-                    <p><strong>Chocolate Protein Bite:</strong> Dates, almonds, chocolate protein powder (whey protein isolate, cocoa powder), cocoa nibs, coconut oil, sea salt.</p>
-                    <p><strong>Berry Antioxidant Bite:</strong> Dates, cashews, dried blueberries, dried cranberries, chia seeds, flax seeds, freeze-dried strawberry powder, lemon juice, sea salt.</p>
-                    <p><strong>Coconut Tropical Bite:</strong> Dates, cashews, dried mango, coconut flakes, lime juice, coconut oil, turmeric (for color), sea salt.</p>
-                    <p><strong>Coffee Energizer Bite:</strong> Dates, almonds, coffee beans, cocoa powder, coconut oil, maple syrup, sea salt.</p>
-                    <p><em>All products are made in a facility that processes nuts, dairy, and soy.</em></p>
-                `,
-        },
-        contact: {
-          title: "Contact Us",
-          content: `
-                    <p>We'd love to hear from you! Reach out with any questions, feedback, or wholesale inquiries.</p>
-                    <p><strong>Email:</strong> hello@powermunch.com</p>
-                    <p><strong>Phone:</strong> (555) 123-4567</p>
-                    <p><strong>Address:</strong><br>
-                    Power Munch LLC<br>
-                    123 Energy Lane<br>
-                    Wellness City, CA 90210</p>
-                    <p>Follow us on social media for the latest updates, promotions, and nutrition tips!</p>
+                    <p><strong>Choco Green(74 Kcal): </strong> Dates Paste (Natural Sweetener), Organic Oat Flakes, Dried Kiwi, a pinch of Cinnamon, Sesame Seeds, Rose & Blossom Waters, 90% Dark Chocolate. Naturally Sweetened, No Artificial Additives.</p>
+                    <br><p><strong>Golden Spice (60 Kcal):  </strong> Dates Paste (Natural Sweetener), Organic Oat Flakes, Dried Pineapple, Cinnamon, Rose & Blossom Waters. Naturally Sweetened, No Artificial Additives.</p>
+                    <br><p><strong>Coconut Cloud (72 Kcal): </strong> Dates Paste (Natural Sweetener), Cashews, Pistachios, Walnuts, Coconut Milk, Cinnamon, Coconut Seeds. Naturally Sweetened, No Artificial Additives.</p>
+                    <br><p><strong>The Muddy Buddy (85 Kcal): </strong> Fresh Made Peanut Butter, Organic Oat Flakes, Almond Milk, Dark Chocolate Chips, Pure Natural Honey, and Dark Cacao Powder. Naturally Sweetened, No Artificial Additives.</p>
+                    <br><p class="italic"><i>With a balance of fiber, protein, and natural sweetness, these premium-quality energy balls make the perfect guilt-free snack!</i></p>
                 `,
         },
       };
