@@ -160,20 +160,20 @@ body {
   line-height: 1.6;
   width: 100%;
   overflow-y: auto;
-  max-height: 400px;
+  max-height: none;
 }
 
 .close-button {
   background-color: var(--red);
   color: white;
   border: none;
-  padding: 14px 30px;
-  border-radius: 12px;
+  padding: 10px 20px;
+  border-radius: 999px;
   cursor: pointer;
   font-weight: bold;
   font-size: 16px;
-  margin-top: 25px;
-  width: 100%;
+  margin-top: 35px;
+  align-self: center;
 }
 
 .social-links {
