@@ -411,4 +411,7 @@ footer a:hover {
   .calories-row {
     font-size: 16px;
   }
+  .prodTitle {
+    font-size: larger;
+  }
 }
