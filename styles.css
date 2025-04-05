@@ -53,10 +53,11 @@ body {
   padding: 20px;
 }
 
+/* Logo styling restored from old website */
 .logo {
   width: 220px;
   height: 220px;
-  margin: 20px auto 60px;
+  margin: 20px auto;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -67,6 +68,7 @@ body {
   box-shadow: 0 0 40px rgba(37, 144, 207, 0.5);
   animation: pulse-light 3s infinite;
 }
+
 .logo::after {
   content: "";
   position: absolute;
@@ -85,6 +87,7 @@ body {
   z-index: 2;
   pointer-events: none;
 }
+
 .logo img {
   width: 138%;
   height: 138%;
@@ -94,6 +97,7 @@ body {
   position: relative;
   z-index: 1;
 }
+
 @keyframes pulse-light {
   0% {
     box-shadow: 0 0 15px rgba(9, 28, 84, 0.6);
@@ -106,6 +110,7 @@ body {
     box-shadow: 0 0 15px rgba(9, 28, 84, 0.6);
   }
 }
+
 @keyframes inner-light {
   0% {
     opacity: 0.3;
@@ -115,17 +120,10 @@ body {
   }
 }
 
-.logo img {
-  width: 138%;
-  height: 138%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
 .title {
   font-size: 2.2rem;
   font-weight: bold;
-  margin-bottom: 120px;
+  margin-bottom: 40px;
   color: var(--red);
 }
 
@@ -134,7 +132,7 @@ body {
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .button {
@@ -155,6 +153,7 @@ body {
   transform: translateY(-2px);
 }
 
+/* Modified modal styling to ensure it fits on iPhone screens */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -175,23 +174,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 85vh; /* Ensure modal doesn't exceed screen height */
 }
 
 .modal {
   background-color: var(--modal-bg);
-  padding: 25px;
+  padding: 20px;
   border-radius: 20px;
   width: 100%;
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 80vh; /* Limit height to prevent overflow */
 }
 
 .modal-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   color: var(--blue);
 }
 
@@ -200,7 +201,8 @@ body {
   line-height: 1.6;
   width: 100%;
   overflow-y: auto;
-  max-height: 80vh;
+  max-height: 60vh; /* Limit content area height */
+  padding-right: 5px; /* Add some padding for scrollbar */
 }
 
 .close-button {
@@ -212,14 +214,14 @@ body {
   cursor: pointer;
   font-weight: bold;
   font-size: 16px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .social-link {
@@ -254,7 +256,8 @@ footer {
   color: var(--footer-color);
   width: 100%;
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: auto;
+  padding-bottom: 20px;
 }
 
 footer a {
@@ -283,4 +286,31 @@ footer a:hover {
   font-size: 0.95rem;
   margin-bottom: 10px;
   line-height: 1.5;
+}
+
+/* Additional media queries for better iPhone support */
+@media screen and (max-width: 390px) {
+  .logo {
+    width: 180px;
+    height: 180px;
+    margin: 15px auto;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .button {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .modal-content {
+    max-height: 50vh;
+  }
+
+  .modal-title {
+    font-size: 20px;
+  }
 }
