@@ -3,18 +3,13 @@
   --blue: #2590cf;
   --red: #c72a29;
   --yellow: #fee887;
-
-  /* Use dark mode values as default */
   --bg-color: var(--navy);
   --text-color: white;
   --button-color: var(--blue);
   --button-text: white;
   --modal-bg: #132347;
-  --subtitle-color: #b0b0b0;
   --footer-color: #b0b0b0;
   --button-hover: var(--yellow);
-  --table-border: #444;
-  --table-header: #1f3054;
 }
 
 * {
@@ -45,9 +40,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  -webkit-overflow-scrolling: none;
-  touch-action: none;
 }
 
 .container {
@@ -59,41 +51,17 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  position: relative;
 }
 
 .logo {
   width: 220px;
   height: 220px;
-  margin: 20px auto 60px; /* INCREASED spacing after logo */
+  margin: 20px auto 60px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  position: relative;
-  box-shadow: 0 0 40px rgba(37, 144, 207, 0.5); /* Outer glow */
-  animation: pulse-light 3s infinite;
-}
-
-.logo::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(37, 144, 207, 0.4) 0%,
-    rgba(9, 28, 84, 0) 70%
-  );
-  mix-blend-mode: screen;
-  animation: inner-light 3s infinite alternate;
-  z-index: 2;
-  pointer-events: none;
 }
 
 .logo img {
@@ -101,60 +69,34 @@ body {
   height: 138%;
   object-fit: cover;
   border-radius: 50%;
-  object-position: center;
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes pulse-light {
-  0% {
-    box-shadow: 0 0 15px rgba(9, 28, 84, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(37, 144, 207, 0.8),
-      0 0 50px rgba(37, 144, 207, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(9, 28, 84, 0.6);
-  }
-}
-
-@keyframes inner-light {
-  0% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0.7;
-  }
 }
 
 .title {
-  font-size: 2.2rem; /* BIGGER title */
+  font-size: 2.2rem;
   font-weight: bold;
-  margin-bottom: 60px; /* INCREASED spacing after title */
+  margin-bottom: 120px;
   color: var(--red);
 }
 
 .button-container {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* INCREASED spacing between buttons */
+  gap: 20px;
   width: 100%;
-  margin-bottom: 60px; /* INCREASED spacing after buttons */
+  margin-bottom: 60px;
 }
 
 .button {
   background-color: var(--button-color);
   color: var(--button-text);
-  padding: 18px 20px; /* TALLER buttons */
+  padding: 18px 20px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s, background-color 0.2s;
   border: none;
-  font-size: 18px; /* BIGGER text */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
 }
 
 .button:hover {
@@ -173,27 +115,20 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 20px;
 }
 
 .modal-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
   max-width: 500px;
-  width: 90%;
 }
 
 .modal {
   background-color: var(--modal-bg);
   padding: 25px;
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 20px;
   width: 100%;
-  position: relative;
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-  /* All modals will have the same size */
-  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -211,68 +146,53 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  line-height: 1;
 }
 
 .modal-title {
-  font-size: 24px; /* BIGGER title */
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 25px;
   color: var(--blue);
-  width: 100%;
-  text-align: center; /* Center the modal title */
 }
 
 .modal-content {
   font-size: 16px;
   line-height: 1.6;
   width: 100%;
-  overflow-y: auto; /* Allow scrolling only within the content area */
-  flex-grow: 1;
-  padding-right: 5px;
+  overflow-y: auto;
+  max-height: 400px;
 }
 
-/* Close button OUTSIDE of the modal */
 .close-button {
   background-color: var(--red);
   color: white;
   border: none;
-  padding: 12px 30px;
-  border-radius: 0 0 10px 10px;
+  padding: 14px 30px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: bold;
   font-size: 16px;
-  margin-top: 0; /* Connected to the modal */
+  margin-top: 25px;
   width: 100%;
-}
-
-.close-button:hover {
-  background-color: #a61e1d;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: auto; /* Push to bottom but before footer */
-  margin-bottom: 30px; /* Space above footer */
+  margin-bottom: 30px;
 }
 
 .social-link {
-  width: 50px; /* BIGGER icons */
-  height: 50px; /* BIGGER icons */
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-decoration: none;
-  transition: transform 0.2s;
-  font-size: 24px; /* BIGGER icons */
+  font-size: 24px;
 }
 
 .instagram-link {
@@ -288,10 +208,6 @@ body {
 
 .whatsapp-link {
   background-color: #25d366;
-}
-
-.social-link:hover {
-  transform: scale(1.1);
 }
 
 footer {
@@ -319,75 +235,14 @@ footer a:hover {
   color: var(--red);
 }
 
+.prodName {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--red);
+}
+
 .prodTitle {
-  font-size: larger;
+  font-size: 0.95rem;
   margin-bottom: 10px;
-}
-
-/* Media queries for better responsiveness */
-@media screen and (max-width: 600px) {
-  .container {
-    padding: 15px;
-  }
-
-  .logo {
-    width: 180px;
-    height: 180px;
-    margin-bottom: 40px; /* Still good spacing on mobile */
-  }
-
-  .title {
-    font-size: 1.8rem;
-    margin-bottom: 40px; /* Still good spacing on mobile */
-  }
-
-  .button {
-    padding: 15px;
-    font-size: 16px;
-  }
-
-  .button-container {
-    gap: 15px;
-    margin-bottom: 40px; /* Still good spacing on mobile */
-  }
-
-  .modal {
-    height: 350px;
-    padding: 20px 15px;
-  }
-
-  .modal-title {
-    font-size: 20px;
-  }
-
-  .modal-content {
-    font-size: 15px;
-  }
-
-  .social-link {
-    width: 45px;
-    height: 45px;
-  }
-}
-
-/* For very small screens */
-@media screen and (max-height: 700px) {
-  .logo {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 30px;
-  }
-
-  .title {
-    margin-bottom: 30px;
-  }
-
-  .button-container {
-    margin-bottom: 30px;
-    gap: 12px;
-  }
-
-  .button {
-    padding: 12px;
-  }
+  line-height: 1.5;
 }

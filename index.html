@@ -63,13 +63,12 @@
           <div class="modal-content" id="modalContent">
             Modal content goes here.
           </div>
+          <button class="close-button" onclick="closeModal()">Close</button>
         </div>
-        <button class="close-button" onclick="closeModal()">Close</button>
       </div>
     </div>
 
     <script>
-      // Modal content
       const modalContents = {
         about: {
           title: "About Us",
@@ -81,22 +80,21 @@
           title: "The Experience",
           content: `
             <p>It's love at first bite! You'll savor the irresistible flavor combinations of our power munch balls. You pick your healthy poison! Whether it's the rich harmony of <b>peanut butter</b> and <b>cacao</b>, the zesty fusion of <b>kiwi</b> and <b>dark chocolate</b>, the comforting warmth of <b>pineapple</b> and <b>cinnamon</b>, or the tropical bliss of <b>coconut</b> and <b>nuts</b>.</p>
-            <br><p class="italic"><i>To maintain their freshness and quality, refrigerate the energy balls or store them in a cool place. Keep them away from direct sunlight and avoid extended storage in bags to preserve their texture and flavor</i></p>
+            <br><p class="italic"><i>To maintain their freshness and quality, refrigerate the energy balls or store them in a cool place. Keep them away from direct sunlight and avoid extended storage in bags to preserve their texture and flavor.</i></p>
           `,
         },
         ingredients: {
           title: "Our Products",
           content: `
-            <p class="prodTitle"><strong>Choco Green <a class="cal">(74 Kcal)</a>: </strong> <br>Dates Paste <i class="italic">(Natural Sweetener)</i>, <b>Organic</b> Oat Flakes, Dried Kiwi, a pinch of Cinnamon, Sesame Seeds, Rose & Blossom Waters, <b>90%</b> Dark Chocolate. <i class="italic">No Artificial Additives</i>.</p>
-            <br><p class="prodTitle"><strong>Golden Spice <a class="cal">(60 Kcal)</a>: </strong> <br>Dates Paste <i class="italic">(Natural Sweetener)</i>, <b>Organic</b> Oat Flakes, Dried Pineapple, Cinnamon, Rose & Blossom Waters. <i class="italic">No Artificial Additives</i>.</p>
-            <br><p class="prodTitle"><strong>Coconut Cloud <a class="cal">(72 Kcal)</a>: </strong> <br>Dates Paste <i class="italic">(Natural Sweetener)</i>, Cashews, Pistachios, Walnuts, Coconut Milk, Cinnamon, <b>Fresh grated</b> coconut. <i class="italic">No Artificial Additives</i>.</p>
-            <br><p class="prodTitle"><strong>The Muddy Buddy <a class="cal">(85 Kcal)</a>: </strong> <br><b>Fresh Made</b> Peanut Butter, <b>Organic</b> Oat Flakes, Almond Milk, <b>Dark</b> Chocolate Chips, Pure <b>Natural</b> Honey, and <b>Dark</b> Cacao Powder.<i class="italic">Naturally Sweetened, No Artificial Additives</i>.</p>
+            <p class="prodTitle"><span class="prodName">Choco Green <a class="cal">(74 Kcal)</a>:</span><br>Dates Paste <i class="italic">(Natural Sweetener)</i>, <b>Organic</b> Oat Flakes, Dried Kiwi, a pinch of Cinnamon, Sesame Seeds, Rose & Blossom Waters, <b>90%</b> Dark Chocolate. <i class="italic">No Artificial Additives</i>.</p>
+            <br><p class="prodTitle"><span class="prodName">Golden Spice <a class="cal">(60 Kcal)</a>:</span><br>Dates Paste <i class="italic">(Natural Sweetener)</i>, <b>Organic</b> Oat Flakes, Dried Pineapple, Cinnamon, Rose & Blossom Waters. <i class="italic">No Artificial Additives</i>.</p>
+            <br><p class="prodTitle"><span class="prodName">Coconut Cloud <a class="cal">(72 Kcal)</a>:</span><br>Dates Paste <i class="italic">(Natural Sweetener)</i>, Cashews, Pistachios, Walnuts, Coconut Milk, Cinnamon, <b>Fresh grated</b> coconut. <i class="italic">No Artificial Additives</i>.</p>
+            <br><p class="prodTitle"><span class="prodName">The Muddy Buddy <a class="cal">(85 Kcal)</a>:</span><br><b>Fresh Made</b> Peanut Butter, <b>Organic</b> Oat Flakes, Almond Milk, <b>Dark</b> Chocolate Chips, Pure <b>Natural</b> Honey, and <b>Dark</b> Cacao Powder. <i class="italic">Naturally Sweetened, No Artificial Additives</i>.</p>
             <br><p class="italic"><i>With a balance of fiber, protein, and natural sweetness, these premium-quality energy balls make the perfect guilt-free snack!</i></p>
           `,
         },
       };
 
-      // Open modal function
       function openModal(contentType) {
         const content = modalContents[contentType];
         if (content) {
@@ -107,13 +105,11 @@
         }
       }
 
-      // Close modal function
       function closeModal() {
         document.getElementById("modalOverlay").style.display = "none";
         document.body.classList.remove("no-scroll");
       }
 
-      // Close modal when clicking outside
       document
         .getElementById("modalOverlay")
         .addEventListener("click", function (event) {
