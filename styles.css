@@ -28,6 +28,12 @@
   font-family: "Arial", sans-serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -37,18 +43,24 @@ body {
   min-height: 100vh;
   padding: 20px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-y: hidden; /* Prevent scrolling when not needed */
 }
 
 .container {
   max-width: 450px;
   width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90vh;
 }
 
 .logo {
   width: 220px;
   height: 220px;
-  margin: 20px auto;
+  margin: 20px auto 40px; /* Increased bottom margin for spacing */
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -114,7 +126,7 @@ body {
 .title {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 40px; /* Increased spacing below title */
   color: var(--red);
 }
 
@@ -129,6 +141,7 @@ body {
   flex-direction: column;
   gap: 15px;
   width: 100%;
+  margin-bottom: 30px; /* Add spacing after buttons */
 }
 
 .button {
@@ -169,41 +182,75 @@ body {
   border-radius: 15px;
   max-width: 500px;
   width: 90%;
-  max-height: 80vh;
-  overflow-y: auto;
   position: relative;
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+
+  /* All modals will have the same size */
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modal-close {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: none;
+  background: white;
+  color: var(--navy);
   border: none;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
-  color: var(--subtitle-color);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
 }
 
 .modal-title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
-  margin-bottom: 15px;
-  color: var(--text-color);
+  margin-bottom: 20px;
+  color: var(--blue);
+  width: 100%;
+  text-align: center; /* Center the modal title */
 }
 
 .modal-content {
   font-size: 16px;
   line-height: 1.5;
+  flex-grow: 1;
+  width: 100%;
+  overflow-y: auto; /* Allow scrolling only within the content area */
+  margin-bottom: 15px;
+}
+
+.close-button {
+  background-color: var(--red);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: auto; /* Push to bottom of modal */
+}
+
+.close-button:hover {
+  background-color: #a61e1d;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-top: 30px;
+  margin-top: auto; /* Push to bottom but before footer */
+  margin-bottom: 20px;
 }
 
 .social-link {
@@ -239,7 +286,7 @@ body {
 }
 
 footer {
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 14px;
   color: var(--footer-color);
   width: 100%;
@@ -255,98 +302,16 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* NUTRITION FACTS STYLING */
-.nutrition-facts {
-  max-width: 400px;
-  margin: 20px auto;
-  border: 2px solid var(--nutrition-label-border);
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: var(--nutrition-label-bg);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.italic {
+  color: var(--yellow);
 }
 
-.nutrition-header {
-  background-color: var(--nutrition-header-bg);
-  color: var(--nutrition-header-text);
-  padding: 12px 15px;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
+.cal {
+  color: var(--red);
 }
 
-.nutrition-content {
-  padding: 15px;
-}
-
-.serving-info {
-  font-size: 14px;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--table-border);
-}
-
-.nutrition-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 0;
-  font-size: 14px;
-}
-
-.calories-row {
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px 0;
-  border-bottom: 5px solid var(--nutrition-label-border);
-  margin-bottom: 10px;
-}
-
-.daily-value-header {
-  text-align: right;
-  font-weight: bold;
-  font-size: 12px;
-  margin-bottom: 8px;
-}
-
-.main-nutrient {
-  font-weight: bold;
-}
-
-.sub-nutrient {
-  padding-left: 20px;
-}
-
-.sub-sub-nutrient {
-  padding-left: 35px;
-}
-
-.divider {
-  border-bottom: 1px solid var(--table-border);
-  margin: 5px 0;
-}
-
-.thick-divider {
-  border-bottom: 4px solid var(--table-border);
-  margin: 10px 0;
-}
-
-.medium-divider {
-  border-bottom: 2px solid var(--table-border);
-  margin: 8px 0;
-}
-
-.nutrition-footer {
-  font-size: 10px;
-  padding-top: 10px;
-  margin-top: 10px;
-  border-top: 1px solid var(--table-border);
-}
-
-.nutrition-note {
-  font-style: italic;
-  font-size: 11px;
-  margin-top: 8px;
-  text-align: center;
+.prodTitle {
+  font-size: larger;
 }
 
 /* Media queries for better responsiveness */
@@ -356,18 +321,14 @@ footer a:hover {
   }
 
   .logo {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
   }
 
-  .italic {
-    color: var(--yellow);
-  }
-  .cal {
-    color: var(--red);
-  }
   .title {
     font-size: 1.5rem;
+    margin-bottom: 30px;
   }
 
   .subtitle {
@@ -380,38 +341,16 @@ footer a:hover {
   }
 
   .modal {
-    margin-top: 50px;
-    padding-bottom: 10px;
-    padding: 15px;
+    height: 350px;
+    padding: 20px 15px;
     width: 95%;
   }
 
   .modal-title {
     font-size: 18px;
-    color: var(--blue);
   }
 
   .modal-content {
     font-size: 14px;
-  }
-
-  .nutrition-facts {
-    max-width: 100%;
-  }
-
-  .nutrition-header {
-    font-size: 18px;
-    padding: 10px;
-  }
-
-  .nutrition-row {
-    font-size: 13px;
-  }
-
-  .calories-row {
-    font-size: 16px;
-  }
-  .prodTitle {
-    font-size: larger;
   }
 }
