@@ -55,8 +55,8 @@ body {
 
 /* Logo styling restored from old website */
 .logo {
-  width: 205px;
-  height: 205px;
+  width: 180px;
+  height: 180px;
   margin: 20px auto;
   border-radius: 50%;
   overflow: hidden;
@@ -89,8 +89,8 @@ body {
 }
 
 .logo img {
-  width: 138%;
-  height: 138%;
+  width: 130%;
+  height: 130%;
   object-fit: cover;
   border-radius: 50%;
   object-position: center;
@@ -121,7 +121,7 @@ body {
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: bold;
   margin-bottom: 40px;
   color: var(--red);
@@ -132,7 +132,7 @@ body {
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .button {
@@ -225,8 +225,8 @@ body {
 }
 
 .social-link {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
