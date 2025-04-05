@@ -313,4 +313,7 @@ footer a:hover {
   .modal-title {
     font-size: 20px;
   }
+  .centeredText {
+    text-align: center;
+  }
 }
