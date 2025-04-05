@@ -89,6 +89,7 @@ body {
 }
 
 .logo img {
+  background-color: white;
   width: 130%;
   height: 130%;
   object-fit: cover;
