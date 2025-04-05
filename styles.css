@@ -55,8 +55,8 @@ body {
 
 /* Logo styling restored from old website */
 .logo {
-  width: 180px;
-  height: 180px;
+  width: 170px;
+  height: 170px;
   margin: 20px auto;
   border-radius: 50%;
   overflow: hidden;
@@ -289,16 +289,20 @@ footer a:hover {
   line-height: 1.5;
 }
 
+.centeredText {
+  text-align: center;
+}
+
 /* Additional media queries for better iPhone support */
 @media screen and (max-width: 390px) {
   .logo {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     margin: 15px auto;
   }
 
   .title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 30px;
   }
 
@@ -313,8 +317,5 @@ footer a:hover {
 
   .modal-title {
     font-size: 20px;
-  }
-  .centeredText {
-    text-align: center;
   }
 }
