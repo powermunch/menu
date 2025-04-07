@@ -55,8 +55,8 @@ body {
 
 /* Logo styling restored from old website */
 .logo {
-  width: 170px;
-  height: 170px;
+  width: 150px;
+  height: 150px;
   margin: 10px auto 15px auto;
   border-radius: 50%;
   overflow: hidden;
@@ -122,16 +122,16 @@ body {
 }
 
 .title {
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   color: var(--red);
 }
 
 .button-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   width: 100%;
   margin-bottom: 15px;
 }
@@ -139,14 +139,14 @@ body {
 .button {
   background-color: var(--button-color);
   color: var(--button-text);
-  padding: 18px 20px;
+  padding: 15px 20px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s, background-color 0.2s;
   border: none;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .button:hover {
@@ -166,7 +166,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding: 20px;
+  padding: 15px;
 }
 
 .modal-wrapper {
@@ -175,31 +175,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 85vh; /* Ensure modal doesn't exceed screen height */
+  max-height: 90vh; /* Ensure modal doesn't exceed screen height */
 }
 
 .modal {
   background-color: var(--modal-bg);
-  padding: 20px;
-  border-radius: 20px;
+  padding: 15px;
+  border-radius: 15px;
   width: 100%;
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 80vh; /* Limit height to prevent overflow */
+  max-height: 85vh; /* Limit height to prevent overflow */
 }
 
 .modal-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   color: var(--blue);
 }
 
 .modal-content {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
   width: 100%;
   overflow-y: auto;
   max-height: 60vh; /* Limit content area height */
@@ -210,31 +210,31 @@ body {
   background-color: var(--red);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 18px;
   border-radius: 999px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 16px;
-  margin-top: 15px;
+  font-size: 15px;
+  margin-top: 12px;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .social-link {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .instagram-link {
@@ -253,12 +253,12 @@ body {
 }
 
 footer {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--footer-color);
   width: 100%;
   text-align: center;
   margin-top: auto;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 }
 
 footer a {
@@ -279,43 +279,97 @@ footer a:hover {
 }
 
 .prodName {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .prodTitle {
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
 }
 
 .centeredText {
   text-align: center;
 }
 
-/* Additional media queries for better iPhone support */
-@media screen and (max-width: 390px) {
+/* Enhanced media queries for better iPhone support - specifically targeting iPhone 8 and smaller */
+@media screen and (max-width: 375px) {
+  .container {
+    padding: 15px 10px;
+  }
+
   .logo {
-    width: 160px;
-    height: 160px;
-    margin: 15px auto;
+    width: 130px;
+    height: 130px;
+    margin: 10px auto;
   }
 
   .title {
-    font-size: 1.4rem;
-    margin-bottom: 25px;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .button-container {
+    gap: 12px;
   }
 
   .button {
-    padding: 15px;
-    font-size: 16px;
+    padding: 12px 15px;
+    font-size: 15px;
   }
 
   .modal-content {
-    max-height: 50vh;
+    max-height: 45vh;
+    font-size: 14px;
   }
 
   .modal-title {
+    font-size: 18px;
+  }
+
+  .prodName {
+    font-size: 0.95rem;
+  }
+
+  .prodTitle {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .social-link {
+    width: 35px;
+    height: 35px;
     font-size: 20px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
+/* Even smaller devices */
+@media screen and (max-height: 570px) {
+  .logo {
+    width: 110px;
+    height: 110px;
+    margin: 5px auto;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .button-container {
+    gap: 10px;
+  }
+
+  .button {
+    padding: 10px;
+  }
+
+  .social-links {
+    margin-top: 12px;
   }
 }
