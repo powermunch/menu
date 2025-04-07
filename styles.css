@@ -57,7 +57,7 @@ body {
 .logo {
   width: 150px;
   height: 150px;
-  margin: 10px auto 15px auto;
+  margin: 10px auto 25px auto;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -124,7 +124,7 @@ body {
 .title {
   font-size: 1.7rem;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: var(--red);
 }
 
@@ -133,7 +133,7 @@ body {
   flex-direction: column;
   gap: 15px;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .button {
@@ -221,8 +221,8 @@ body {
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 18px;
+  gap: 30px;
+  margin-top: 30px;
 }
 
 .social-link {
@@ -302,16 +302,17 @@ footer a:hover {
   .logo {
     width: 130px;
     height: 130px;
-    margin: 10px auto;
+    margin: 10px auto 20px auto;
   }
 
   .title {
     font-size: 1.3rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .button-container {
     gap: 12px;
+    margin-bottom: 25px;
   }
 
   .button {
@@ -343,6 +344,11 @@ footer a:hover {
     font-size: 20px;
   }
 
+  .social-links {
+    margin-top: 25px; /* Increased from default */
+    gap: 25px; /* Adjusted for consistent spacing between icons */
+  }
+
   footer {
     font-size: 12px;
   }
@@ -353,16 +359,17 @@ footer a:hover {
   .logo {
     width: 110px;
     height: 110px;
-    margin: 5px auto;
+    margin: 5px auto 15px auto;
   }
 
   .title {
     font-size: 1.2rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   .button-container {
     gap: 10px;
+    margin-bottom: 20px;
   }
 
   .button {
@@ -371,5 +378,6 @@ footer a:hover {
 
   .social-links {
     margin-top: 12px;
+    gap: 20px;
   }
 }
