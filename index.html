@@ -14,108 +14,670 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="logo">
-        <img src="logo.png" alt="Power Munch Logo" />
-      </div>
-
-      <h1 class="title">Munch Down, Power Up!</h1>
-
-      <div class="button-container">
-        <button class="button" onclick="openModal('about')">About Us</button>
-        <button class="button" onclick="openModal('products')">
-          The Experience
-        </button>
-        <button class="button" onclick="openModal('ingredients')">
-          Our Products
-        </button>
-      </div>
-
-      <div class="social-links">
-        <a
-          href="https://www.instagram.com/powermunch.lb?igsh=ZDloMnVvZjBhdmcz"
-          class="social-link instagram-link"
-          aria-label="Instagram"
-        >
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a
-          href="https://wa.me/+96171786689"
-          class="social-link whatsapp-link"
-          aria-label="WhatsApp"
-        >
-          <i class="fab fa-whatsapp"></i>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="#hero" class="logo">
+          <img src="images/logo.png" alt="Power Munch logo" />
         </a>
       </div>
+    </header>
 
-      <footer>
-        © 2025 Power Munch. All rights reserved. | By
-        <a href="https://www.jpayoub.com" target="_blank">JP Ayoub</a>
-      </footer>
-    </div>
-
-    <!-- Modal Overlay -->
-    <div class="modal-overlay" id="modalOverlay">
-      <div class="modal-wrapper">
-        <div class="modal">
-          <h2 class="modal-title" id="modalTitle">Modal Title</h2>
-          <div class="modal-content" id="modalContent">
-            Modal content goes here.
-          </div>
-          <button class="close-button" onclick="closeModal()">Close</button>
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-copy" data-animate>
+          <p class="eyebrow">Hand-crafted energy balls</p>
+          <h1>Munch Down, <span class="power-up">Power Up!</span></h1>
+          <p class="subtitle">
+            Delicious, nutritious energy bites for your active life. Expertly
+            balanced for sustained energy, our bites fuel athletes,
+            professionals, and anyone who cares about quality.
+          </p>
+          <a href="#product-tabs" class="cta-button">Browse the collection</a>
         </div>
+      </section>
+
+      <section class="experience" id="experience" data-animate>
+        <div class="experience-card">
+          <h2>The Power Munch Experience</h2>
+          <p>
+            Savor the natural goodness of our power munch balls, thoughtfully
+            crafted with unique and irresistible flavor combinations. Enjoy the
+            rich harmony of peanut butter and cacao, the zesty fusion of kiwi
+            and dark chocolate, the comforting warmth of pineapple and cinnamon,
+            or the tropical bliss of coconut and nuts. Every bite reflects our
+            dedication to wholesome ingredients and exceptional taste.
+          </p>
+          <p
+            style="
+              margin-top: 16px;
+              font-style: italic;
+              color: rgba(255, 255, 255, 0.7);
+            "
+          >
+            To maintain their freshness and quality, refrigerate the energy
+            balls or store them in a cool place. Keep them away from direct
+            sunlight and avoid extended storage in bags to preserve their
+            texture and flavor.
+          </p>
+        </div>
+      </section>
+
+      <div class="product-tabs" id="product-tabs" data-animate>
+        <button class="tab-button active" data-tab="energy-balls">
+          Energy Balls
+        </button>
+        <button class="tab-button" data-tab="power-bites">Power Bites</button>
       </div>
-    </div>
 
-    <script>
-      const modalContents = {
-        about: {
-          title: "About Us",
-          content: `
-            <p class="centeredText" >Ever snacked so much that it made you question your life choices? Well, we certainly have! Which is why we crafted the perfect healthy, guilt-free snack for you to savor. Our energy balls will not only satisfy your sweet tooth but also help tame your worries with their low-calorie count and natural ingredients, keeping you full and satisfied for longer.</p>
-          `,
-        },
-        products: {
-          title: "The Experience",
-          content: `
-            <p class="centeredText" >It's love at first bite! You'll savor the irresistible flavor combinations of our power munch balls. You pick your healthy poison! Whether it's the rich harmony of <b>peanut butter</b> and <b>cacao</b>, the zesty fusion of <b>kiwi</b> and <b>dark chocolate</b>, the comforting warmth of <b>pineapple</b> and <b>cinnamon</b>, or the tropical bliss of <b>coconut</b> and <b>nuts</b>.</p>
-            <br><p class="italic"><i>To maintain their freshness and quality, refrigerate the energy balls or store them in a cool place. Keep them away from direct sunlight and avoid extended storage in bags to preserve their texture and flavor.</i></p>
-          `,
-        },
-        ingredients: {
-          title: "Our Products",
-          content: `
-            <p class="prodTitle"><span class="prodName">Choco Green <a class="cal">(74 Cal)</a>:</span><br>Dates Paste <i class="italic">(Natural Sweetener)</i>, <b>Organic</b> Oat Flakes, Dried Kiwi, a pinch of Cinnamon, Sesame Seeds, Rose & Blossom Waters, <b>99%</b> Dark Chocolate. <i class="italic">No Artificial Additives</i>.</p>
-            <br><p class="prodTitle"><span class="prodName">Golden Spice <a class="cal">(60 Cal)</a>:</span><br>Dates Paste <i class="italic">(Natural Sweetener)</i>, <b>Organic</b> Oat Flakes, Dried Pineapple, Cinnamon, Rose & Blossom Waters. <i class="italic">No Artificial Additives</i>.</p>
-            <br><p class="prodTitle"><span class="prodName">Coconut Cloud <a class="cal">(72 Cal)</a>:</span><br>Dates Paste <i class="italic">(Natural Sweetener)</i>, Cashews, Pistachios, Walnuts, Coconut Milk, Cinnamon, <b>Fresh grated</b> coconut. <i class="italic">No Artificial Additives</i>.</p>
-            <br><p class="prodTitle"><span class="prodName">Muddy Buddy <a class="cal">(85 Cal)</a>:</span><br><b>Fresh Made</b> Peanut Butter, <b>Organic</b> Oat Flakes, Almond Milk, <b>Dark</b> Chocolate Chips, Pure <b>Natural</b> Honey, and <b>Dark</b> Cacao Powder. <i class="italic">Naturally Sweetened, No Artificial Additives</i>.</p>
-            <br><p class="italic"><i>With a balance of fiber, protein, and natural sweetness, these premium-quality energy balls make the perfect guilt-free snack!</i></p>
-          `,
-        },
-      };
+      <section class="products" id="products" data-section="energy-balls">
+        <div class="section-heading" data-animate>
+          <h2>Our Products</h2>
+          <p>
+            Tap a flavor to reveal the ingredient line-up and watch the energy
+            balls fall into place.
+          </p>
+        </div>
 
-      function openModal(contentType) {
-        const content = modalContents[contentType];
-        if (content) {
-          document.getElementById("modalTitle").textContent = content.title;
-          document.getElementById("modalContent").innerHTML = content.content;
-          document.getElementById("modalOverlay").style.display = "flex";
-          document.body.classList.add("no-scroll");
-        }
-      }
+        <article
+          class="product-card"
+          data-flavor="choco-green"
+          data-ball-image="images/choco_green_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/choco_green.jpeg"
+              alt="Choco Green energy ball illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>Choco Green</h3>
+            <p class="product-highlight">
+              Kiwi, cacao, and rose water for a rich, botanical bite.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Dates Paste (Natural Sweetener)</li>
+                <li>Organic Oat Flakes</li>
+                <li>Dried Kiwi</li>
+                <li>a pinch of Cinnamon</li>
+                <li>Sesame Seeds</li>
+                <li>Rose &amp; Blossom Waters</li>
+                <li>90% Dark Chocolate</li>
+              </ul>
+              <p class="calories">62 Kcal • No Artificial Additives</p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
 
-      function closeModal() {
-        document.getElementById("modalOverlay").style.display = "none";
-        document.body.classList.remove("no-scroll");
-      }
+        <article
+          class="product-card"
+          data-flavor="golden-spice"
+          data-ball-image="images/golden_spice_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/golden_spice.jpeg"
+              alt="Golden Spice energy ball illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>Golden Spice</h3>
+            <p class="product-highlight">
+              Pineapple and cinnamon meet a warm, floral finish.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Dates Paste (Natural Sweetener)</li>
+                <li>Organic Oat Flakes</li>
+                <li>Dried Pineapple</li>
+                <li>Cinnamon</li>
+                <li>Rose &amp; Blossom Waters</li>
+              </ul>
+              <p class="calories">60 Kcal • No Artificial Additives</p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
 
-      document
-        .getElementById("modalOverlay")
-        .addEventListener("click", function (event) {
-          if (event.target === this) {
-            closeModal();
-          }
-        });
-    </script>
+        <article
+          class="product-card"
+          data-flavor="coconut-cloud"
+          data-ball-image="images/coconut_cloud_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/coconut_cloud.jpeg"
+              alt="Coconut Cloud energy ball illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>Coconut Cloud</h3>
+            <p class="product-highlight">
+              Creamy coconut and roasted nuts with a whisper of spice.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Dates Paste (Natural Sweetener)</li>
+                <li>Cashews, Pistachios &amp; Walnuts</li>
+                <li>Coconut Milk</li>
+                <li>Cinnamon</li>
+                <li>Fresh grated Coconut</li>
+              </ul>
+              <p class="calories">70 Kcal • No Artificial Additives</p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+
+        <article
+          class="product-card"
+          data-flavor="muddy-buddy"
+          data-ball-image="images/muddy_buddy_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/muddy_buddy.jpeg"
+              alt="Muddy Buddy energy ball illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>The Muddy Buddy</h3>
+            <p class="product-highlight">
+              Peanut butter, dark cacao, and honey for a decadent finish.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Fresh Made Peanut Butter</li>
+                <li>Organic Oat Flakes</li>
+                <li>Almond Milk</li>
+                <li>Dark Chocolate Chips</li>
+                <li>Pure Natural Honey</li>
+                <li>Dark Cacao Powder</li>
+              </ul>
+              <p class="calories">
+                80 Kcal • Naturally Sweetened, No Artificial Additives
+              </p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+
+        <article
+          class="product-card"
+          data-flavor="power-snickers"
+          data-ball-image="images/snickers_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/snickers.jpg"
+              alt="Power Snickers energy ball illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>Power Snickers</h3>
+            <p class="product-highlight">
+              Peanut butter, dates, and dark chocolate for a classic treat.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Fresh Made Peanut Butter</li>
+                <li>Dates Paste (Natural Sweetener)</li>
+                <li>Organic Oat Flakes</li>
+                <li>Almond Milk</li>
+                <li>Dark Chocolate Chips</li>
+                <li>Pure Natural Honey</li>
+                <li>Cinnamon</li>
+                <li>Cashew Nuts</li>
+              </ul>
+              <p class="calories">
+                60 Kcal • Naturally Sweetened, No Artificial Additives
+              </p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+
+        <article
+          class="product-card"
+          data-flavor="midnight-brownies"
+          data-ball-image="images/brownie_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/brownie.jpg"
+              alt="Midnight Brownies energy ball illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>Midnight Brownies</h3>
+            <p class="product-highlight">
+              Rich dark cacao with peanut butter for a decadent chocolate
+              experience.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Fresh Made Peanut Butter</li>
+                <li>Dates Paste (Natural Sweetener)</li>
+                <li>Organic Oat Flakes</li>
+                <li>Almond Milk</li>
+                <li>Pure Natural Honey</li>
+                <li>Cinnamon</li>
+                <li>Dark Cacao Powder</li>
+              </ul>
+              <p class="calories">
+                55 Kcal • Naturally Sweetened, No Artificial Additives
+              </p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+
+        <article
+          class="product-card"
+          data-flavor="mocha-mood"
+          data-ball-image="images/mocha_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/mocha.jpg"
+              alt="Mocha Mood energy ball illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>Mocha Mood</h3>
+            <p class="product-highlight">
+              Coffee, cacao, and peanut butter for an energizing boost.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Fresh Made Peanut Butter</li>
+                <li>Dates Paste (Natural Sweetener)</li>
+                <li>Organic Oat Flakes</li>
+                <li>Almond Milk</li>
+                <li>Natural Honey</li>
+                <li>Coffee</li>
+                <li>Cinnamon</li>
+                <li>Dark Cacao Powder</li>
+              </ul>
+              <p class="calories">
+                55 Kcal • Naturally Sweetened, No Artificial Additives
+              </p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+      </section>
+
+      <section
+        class="products christmas-section"
+        id="christmas"
+        data-section="power-bites"
+        style="display: none"
+      >
+        <div class="section-heading" data-animate>
+          <h2 class="christmas-title">Power Bites Christmas Edition</h2>
+          <p class="christmas-subtitle">
+            Don't miss your 20% discount with free delivery in this Christmas
+            season
+          </p>
+        </div>
+
+        <article
+          class="product-card christmas-card"
+          data-flavor="pb-choco-date"
+          data-ball-image="images/choco date_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/choco_date.jpg"
+              alt="PB CHOCO DATE illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>PB CHOCO DATE</h3>
+            <p class="product-highlight">
+              Premium Dates, Peanut Butter, Organic Oat Flakes, Dark Chocolate
+              Chips.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Premium Dates</li>
+                <li>Peanut Butter</li>
+                <li>Organic Oat Flakes</li>
+                <li>Dark Chocolate Chips</li>
+              </ul>
+              <p class="calories">70 Kcal</p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+
+        <article
+          class="product-card christmas-card"
+          data-flavor="cashew-crush"
+          data-ball-image="images/cashew_crunch_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/cashew_crunch.jpg"
+              alt="CASHEW CRUSH illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>CASHEW CRUSH</h3>
+            <p class="product-highlight">
+              Premium Dates, Cashew Butter, Dark Cocoa Powder, Cashew Nuts.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Premium Dates</li>
+                <li>Cashew Butter</li>
+                <li>Dark Cocoa Powder</li>
+                <li>Cashew Nuts</li>
+              </ul>
+              <p class="calories">75 Kcal</p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+
+        <article
+          class="product-card christmas-card"
+          data-flavor="tropical-bliss"
+          data-ball-image="images/tropical_bliss_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/tropical_bliss.jpg"
+              alt="TROPICAL BLISS illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>TROPICAL BLISS</h3>
+            <p class="product-highlight">
+              Premium Dates, Dried Mango, Coconut Flakes, Dark Chocolate Chips.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Premium Dates</li>
+                <li>Dried Mango</li>
+                <li>Coconut Flakes</li>
+                <li>Dark Chocolate Chips</li>
+              </ul>
+              <p class="calories">70 Kcal</p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+
+        <article
+          class="product-card christmas-card"
+          data-flavor="choco-strawberry"
+          data-ball-image="images/choco_strawberry_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/choco_strawberry.jpeg"
+              alt="CHOCO STRAWBERRY illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>CHOCO STRAWBERRY</h3>
+            <p class="product-highlight">
+              Premium Dates, Dried Strawberry, 90% Dark Chocolate.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Premium Dates</li>
+                <li>Dried Strawberry</li>
+                <li>90% Dark Chocolate</li>
+              </ul>
+              <p class="calories">75 Kcal</p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+
+        <article
+          class="product-card christmas-card"
+          data-flavor="pineapple-crunch"
+          data-ball-image="images/pineapple_crunsh_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/pineapple_crunch.jpg"
+              alt="PINEAPPLE CRUNCH illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>PINEAPPLE CRUNCH</h3>
+            <p class="product-highlight">
+              Premium Dates, Dried Pineapple, Pumpkin Seeds.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Premium Dates</li>
+                <li>Dried Pineapple</li>
+                <li>Pumpkin Seeds</li>
+              </ul>
+              <p class="calories">65 Kcal</p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+
+        <article
+          class="product-card christmas-card"
+          data-flavor="dark-sun"
+          data-ball-image="images/dark_sun_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/dark_sun.jpg"
+              alt="DARK SUN illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>DARK SUN</h3>
+            <p class="product-highlight">
+              Premium Dates, Peanut Butter, Sunflower Seeds, Dark Cocoa Powder.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Premium Dates</li>
+                <li>Peanut Butter</li>
+                <li>Sunflower Seeds</li>
+                <li>Dark Cocoa Powder</li>
+              </ul>
+              <p class="calories">75 Kcal</p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+
+        <article
+          class="product-card christmas-card"
+          data-flavor="kiwi-spark"
+          data-ball-image="images/kiwi_spark_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img
+              src="images/kiwi_spark.jpeg"
+              alt="KIWI SPARK illustration"
+              loading="lazy"
+            />
+          </figure>
+          <div class="product-body">
+            <h3>KIWI SPARK</h3>
+            <p class="product-highlight">
+              Premium Dates, Dried Kiwi, Dark Chocolate Chips.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Premium Dates</li>
+                <li>Dried Kiwi</li>
+                <li>Dark Chocolate Chips</li>
+              </ul>
+              <p class="calories">75 Kcal</p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+
+        <article
+          class="product-card christmas-card"
+          data-flavor="date-munch"
+          data-ball-image="images/date_munch_ball.png"
+          data-animate
+        >
+          <figure class="product-media" aria-hidden="true">
+            <img src="images/date munch plt.jpg" x1='0' y1='0' x2='1'
+            y2='1'%3E%3Cstop offset='0%25' stop-color='%23c72a29'/%3E%3Cstop
+            offset='100%25'
+            stop-color='%238B0000'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect
+            width='600' height='400' fill='url(%23dm-grad)'/%3E%3Cellipse
+            cx='220' cy='210' rx='126' ry='108' fill='%23ffffff'
+            opacity='0.22'/%3E%3Ccircle cx='360' cy='140' r='78'
+            fill='%23fee887' opacity='0.4'/%3E%3Ccircle cx='410' cy='258' r='92'
+            fill='%23f3d2a8' opacity='0.35'/%3E%3C/svg%3E" alt="DATE MUNCH
+            illustration" loading="lazy" />
+          </figure>
+          <div class="product-body">
+            <h3>DATE MUNCH</h3>
+            <p class="product-highlight">
+              Premium Dates, Cashew, Walnut, Pistachio Nuts.
+            </p>
+            <button class="product-button" type="button" aria-expanded="false">
+              See ingredients
+            </button>
+            <div class="product-details" hidden>
+              <ul class="ingredient-list">
+                <li>Premium Dates</li>
+                <li>Cashew</li>
+                <li>Walnut</li>
+                <li>Pistachio Nuts</li>
+              </ul>
+              <p class="calories">65 Kcal</p>
+            </div>
+          </div>
+          <div class="ball-rain" aria-hidden="true"></div>
+        </article>
+      </section>
+
+      <section class="experience" data-animate>
+        <div class="experience-card">
+          <p
+            style="
+              text-align: center;
+              font-style: italic;
+              color: rgba(255, 255, 255, 0.85);
+            "
+          >
+            With a balance of fiber, protein, and natural sweetness, these
+            premium-quality energy balls make the perfect guilt-free snack!
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="footer-inner">
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/powermunch.lb?igsh=ZDloMnVvZjBhdmcz"
+            class="social-link instagram-link"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://wa.me/+96171786689"
+            class="social-link whatsapp-link"
+            aria-label="WhatsApp"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+        <p>
+          © 2025 Power Munch. All rights reserved. | Crafted by
+          <a href="https://www.jpayoub.com" target="_blank" rel="noreferrer"
+            >JP Ayoub</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script src="powermunch.js"></script>
   </body>
 </html>
