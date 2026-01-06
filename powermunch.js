@@ -1,4 +1,28 @@
+// Scroll to top on page load to prevent opening at the end
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+  // Also handle hash navigation
+  if (window.location.hash) {
+    const hash = window.location.hash;
+    // Only scroll if it's a valid anchor (not #contact at the bottom)
+    if (hash === "#hero" || hash === "#product-tabs" || hash === "#products" || hash === "#power-bites") {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    } else {
+      // For other hashes, scroll to top
+      window.scrollTo(0, 0);
+    }
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
+  // Ensure page starts at top
+  window.scrollTo(0, 0);
+  
   const animatedBlocks = document.querySelectorAll("[data-animate]");
 
   const observer = new IntersectionObserver(
