@@ -1,11 +1,35 @@
-// Scroll to top on page load to prevent opening at the end
+// Disable browser scroll restoration
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+// Scroll to top IMMEDIATELY - before anything else
+window.scrollTo(0, 0);
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+
+// Also scroll to top on page show (handles back/forward navigation)
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    // Page was loaded from cache
+    window.scrollTo(0, 0);
+  }
+});
+
+// Scroll to top on load
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
-  // Also handle hash navigation
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  
+  // Handle hash navigation - prevent ALL hash scrolling on initial page load
+  // Only allow #hero to scroll on initial load, remove all other hashes
   if (window.location.hash) {
     const hash = window.location.hash;
-    // Only scroll if it's a valid anchor (not #contact at the bottom)
-    if (hash === "#hero" || hash === "#product-tabs" || hash === "#products" || hash === "#power-bites") {
+    
+    // On initial page load, only allow #hero, remove all other hashes to prevent scrolling
+    if (hash === "#hero") {
+      // Allow #hero to scroll (it's at the top anyway)
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
@@ -13,7 +37,9 @@ window.addEventListener("load", () => {
         }
       }, 100);
     } else {
-      // For other hashes, scroll to top
+      // Remove hash from URL to prevent any scrolling to non-hero anchors on initial load
+      history.replaceState(null, null, window.location.pathname + window.location.search);
+      // Ensure we stay at top
       window.scrollTo(0, 0);
     }
   }
@@ -22,6 +48,8 @@ window.addEventListener("load", () => {
 document.addEventListener("DOMContentLoaded", () => {
   // Ensure page starts at top
   window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
   
   const animatedBlocks = document.querySelectorAll("[data-animate]");
 
