@@ -115,12 +115,19 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         details.removeAttribute("hidden");
         details.classList.remove("closing");
-        // Reset animations for slide-in effect
-        const listItems = details.querySelectorAll(".ingredient-list li");
-        listItems.forEach((li) => {
-          li.style.animation = "";
+        // Reset animations for slide-in effect - ensure DOM is ready
+        setTimeout(() => {
+          const listItems = details.querySelectorAll(".ingredient-list li");
+          listItems.forEach((li) => {
+            li.style.animation = "none";
+            // Force reflow to reset animation
+            void li.offsetHeight;
+            li.style.animation = "";
+          });
+        }, 10);
+        requestAnimationFrame(() => {
+          details.classList.add("open");
         });
-        requestAnimationFrame(() => details.classList.add("open"));
         button.setAttribute("aria-expanded", "true");
         button.textContent = "Hide ingredients";
         button.classList.add("active");
@@ -132,6 +139,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Tab switching functionality
   const tabButtons = document.querySelectorAll(".tab-button");
   const sections = document.querySelectorAll("[data-section]");
+  const sectionTitle = document.getElementById("section-title");
+  const powerBitesTitle = document.getElementById("power-bites-title");
+
+  const updateTitle = (activeTab) => {
+    if (sectionTitle) {
+      sectionTitle.textContent = activeTab === "energy-balls" ? "Energy Balls" : "Power Bites";
+    }
+    if (powerBitesTitle) {
+      powerBitesTitle.textContent = "Power Bites";
+    }
+  };
 
   tabButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -154,8 +172,43 @@ document.addEventListener("DOMContentLoaded", () => {
           section.style.display = "none";
         }
       });
+
+      updateTitle(targetTab);
     });
   });
+
+  // Handle "Our Products" button click
+  const ctaButton = document.querySelector(".cta-button");
+  if (ctaButton) {
+    ctaButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      // Show energy balls section and activate that tab
+      const energyBallsSection = document.querySelector('[data-section="energy-balls"]');
+      const energyBallsTab = document.querySelector('[data-tab="energy-balls"]');
+      
+      if (energyBallsSection && energyBallsTab) {
+        // Hide all sections first
+        sections.forEach((section) => {
+          section.style.display = "none";
+        });
+        
+        // Show energy balls
+        energyBallsSection.style.display = "grid";
+        
+        // Activate energy balls tab
+        tabButtons.forEach((btn) => btn.classList.remove("active"));
+        energyBallsTab.classList.add("active");
+        
+        updateTitle("energy-balls");
+        
+        // Scroll to tabs
+        const tabsElement = document.getElementById("product-tabs");
+        if (tabsElement) {
+          tabsElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  }
 });
 
 function triggerBallRain(container, colors, imageSrc) {

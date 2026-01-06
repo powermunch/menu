@@ -26,20 +26,15 @@
       <section class="hero" id="hero">
         <div class="hero-overlay"></div>
         <div class="hero-copy" data-animate>
-          <p class="eyebrow">Hand-crafted energy balls</p>
           <h1>Munch Down, <span class="power-up">Power Up!</span></h1>
-          <p class="subtitle">
-            Delicious, nutritious energy bites for your active life. Expertly
-            balanced for sustained energy, our bites fuel athletes,
-            professionals, and anyone who cares about quality.
-          </p>
-          <a href="#product-tabs" class="cta-button">Browse the collection</a>
+
+          <a href="#product-tabs" class="cta-button">Our Products</a>
         </div>
       </section>
 
       <section class="experience" id="experience" data-animate>
         <div class="experience-card">
-          <h2>The Power Munch Experience</h2>
+          <h2>Our Story</h2>
           <p>
             Savor the natural goodness of our power munch balls, thoughtfully
             crafted with unique and irresistible flavor combinations. Enjoy the
@@ -64,15 +59,18 @@
       </section>
 
       <div class="product-tabs" id="product-tabs" data-animate>
-        <button class="tab-button active" data-tab="energy-balls">
-          Energy Balls
-        </button>
+        <button class="tab-button" data-tab="energy-balls">Energy Balls</button>
         <button class="tab-button" data-tab="power-bites">Power Bites</button>
       </div>
 
-      <section class="products" id="products" data-section="energy-balls">
+      <section
+        class="products"
+        id="products"
+        data-section="energy-balls"
+        style="display: none"
+      >
         <div class="section-heading" data-animate>
-          <h2>Our Products</h2>
+          <h2 id="section-title">Energy Balls</h2>
           <p>
             Tap a flavor to reveal the ingredient line-up and watch the energy
             balls fall into place.
@@ -94,9 +92,7 @@
           </figure>
           <div class="product-body">
             <h3>Choco Green</h3>
-            <p class="product-highlight">
-              Kiwi, cacao, and rose water for a rich, botanical bite.
-            </p>
+            <p class="product-calories-display">62 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -110,7 +106,7 @@
                 <li>Rose &amp; Blossom Waters</li>
                 <li>90% Dark Chocolate</li>
               </ul>
-              <p class="calories">62 Kcal • No Artificial Additives</p>
+              <p class="calories">No Artificial Additives</p>
             </div>
           </div>
           <div class="ball-rain" aria-hidden="true"></div>
@@ -131,9 +127,7 @@
           </figure>
           <div class="product-body">
             <h3>Golden Spice</h3>
-            <p class="product-highlight">
-              Pineapple and cinnamon meet a warm, floral finish.
-            </p>
+            <p class="product-calories-display">60 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -145,7 +139,7 @@
                 <li>Cinnamon</li>
                 <li>Rose &amp; Blossom Waters</li>
               </ul>
-              <p class="calories">60 Kcal • No Artificial Additives</p>
+              <p class="calories">No Artificial Additives</p>
             </div>
           </div>
           <div class="ball-rain" aria-hidden="true"></div>
@@ -166,9 +160,7 @@
           </figure>
           <div class="product-body">
             <h3>Coconut Cloud</h3>
-            <p class="product-highlight">
-              Creamy coconut and roasted nuts with a whisper of spice.
-            </p>
+            <p class="product-calories-display">70 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -180,7 +172,7 @@
                 <li>Cinnamon</li>
                 <li>Fresh grated Coconut</li>
               </ul>
-              <p class="calories">70 Kcal • No Artificial Additives</p>
+              <p class="calories">No Artificial Additives</p>
             </div>
           </div>
           <div class="ball-rain" aria-hidden="true"></div>
@@ -200,10 +192,8 @@
             />
           </figure>
           <div class="product-body">
-            <h3>The Muddy Buddy</h3>
-            <p class="product-highlight">
-              Peanut butter, dark cacao, and honey for a decadent finish.
-            </p>
+            <h3>Muddy Buddy</h3>
+            <p class="product-calories-display">80 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -217,7 +207,7 @@
                 <li>Dark Cacao Powder</li>
               </ul>
               <p class="calories">
-                80 Kcal • Naturally Sweetened, No Artificial Additives
+                Naturally Sweetened, No Artificial Additives
               </p>
             </div>
           </div>
@@ -239,9 +229,7 @@
           </figure>
           <div class="product-body">
             <h3>Power Snickers</h3>
-            <p class="product-highlight">
-              Peanut butter, dates, and dark chocolate for a classic treat.
-            </p>
+            <p class="product-calories-display">60 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -257,7 +245,7 @@
                 <li>Cashew Nuts</li>
               </ul>
               <p class="calories">
-                60 Kcal • Naturally Sweetened, No Artificial Additives
+                Naturally Sweetened, No Artificial Additives
               </p>
             </div>
           </div>
@@ -279,10 +267,7 @@
           </figure>
           <div class="product-body">
             <h3>Midnight Brownies</h3>
-            <p class="product-highlight">
-              Rich dark cacao with peanut butter for a decadent chocolate
-              experience.
-            </p>
+            <p class="product-calories-display">55 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -297,7 +282,7 @@
                 <li>Dark Cacao Powder</li>
               </ul>
               <p class="calories">
-                55 Kcal • Naturally Sweetened, No Artificial Additives
+                Naturally Sweetened, No Artificial Additives
               </p>
             </div>
           </div>
@@ -319,9 +304,7 @@
           </figure>
           <div class="product-body">
             <h3>Mocha Mood</h3>
-            <p class="product-highlight">
-              Coffee, cacao, and peanut butter for an energizing boost.
-            </p>
+            <p class="product-calories-display">55 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -337,7 +320,7 @@
                 <li>Dark Cacao Powder</li>
               </ul>
               <p class="calories">
-                55 Kcal • Naturally Sweetened, No Artificial Additives
+                Naturally Sweetened, No Artificial Additives
               </p>
             </div>
           </div>
@@ -352,11 +335,7 @@
         style="display: none"
       >
         <div class="section-heading" data-animate>
-          <h2 class="christmas-title">Power Bites Christmas Edition</h2>
-          <p class="christmas-subtitle">
-            Don't miss your 20% discount with free delivery in this Christmas
-            season
-          </p>
+          <h2 class="christmas-title" id="power-bites-title">Power Bites</h2>
         </div>
 
         <article
@@ -374,10 +353,7 @@
           </figure>
           <div class="product-body">
             <h3>PB CHOCO DATE</h3>
-            <p class="product-highlight">
-              Premium Dates, Peanut Butter, Organic Oat Flakes, Dark Chocolate
-              Chips.
-            </p>
+            <p class="product-calories-display">70 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -388,7 +364,6 @@
                 <li>Organic Oat Flakes</li>
                 <li>Dark Chocolate Chips</li>
               </ul>
-              <p class="calories">70 Kcal</p>
             </div>
           </div>
           <div class="ball-rain" aria-hidden="true"></div>
@@ -409,9 +384,7 @@
           </figure>
           <div class="product-body">
             <h3>CASHEW CRUSH</h3>
-            <p class="product-highlight">
-              Premium Dates, Cashew Butter, Dark Cocoa Powder, Cashew Nuts.
-            </p>
+            <p class="product-calories-display">75 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -422,7 +395,6 @@
                 <li>Dark Cocoa Powder</li>
                 <li>Cashew Nuts</li>
               </ul>
-              <p class="calories">75 Kcal</p>
             </div>
           </div>
           <div class="ball-rain" aria-hidden="true"></div>
@@ -443,9 +415,7 @@
           </figure>
           <div class="product-body">
             <h3>TROPICAL BLISS</h3>
-            <p class="product-highlight">
-              Premium Dates, Dried Mango, Coconut Flakes, Dark Chocolate Chips.
-            </p>
+            <p class="product-calories-display">70 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -456,7 +426,6 @@
                 <li>Coconut Flakes</li>
                 <li>Dark Chocolate Chips</li>
               </ul>
-              <p class="calories">70 Kcal</p>
             </div>
           </div>
           <div class="ball-rain" aria-hidden="true"></div>
@@ -477,9 +446,7 @@
           </figure>
           <div class="product-body">
             <h3>CHOCO STRAWBERRY</h3>
-            <p class="product-highlight">
-              Premium Dates, Dried Strawberry, 90% Dark Chocolate.
-            </p>
+            <p class="product-calories-display">75 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -489,7 +456,6 @@
                 <li>Dried Strawberry</li>
                 <li>90% Dark Chocolate</li>
               </ul>
-              <p class="calories">75 Kcal</p>
             </div>
           </div>
           <div class="ball-rain" aria-hidden="true"></div>
@@ -510,9 +476,7 @@
           </figure>
           <div class="product-body">
             <h3>PINEAPPLE CRUNCH</h3>
-            <p class="product-highlight">
-              Premium Dates, Dried Pineapple, Pumpkin Seeds.
-            </p>
+            <p class="product-calories-display">65 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -522,7 +486,6 @@
                 <li>Dried Pineapple</li>
                 <li>Pumpkin Seeds</li>
               </ul>
-              <p class="calories">65 Kcal</p>
             </div>
           </div>
           <div class="ball-rain" aria-hidden="true"></div>
@@ -543,9 +506,7 @@
           </figure>
           <div class="product-body">
             <h3>DARK SUN</h3>
-            <p class="product-highlight">
-              Premium Dates, Peanut Butter, Sunflower Seeds, Dark Cocoa Powder.
-            </p>
+            <p class="product-calories-display">75 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -556,7 +517,6 @@
                 <li>Sunflower Seeds</li>
                 <li>Dark Cocoa Powder</li>
               </ul>
-              <p class="calories">75 Kcal</p>
             </div>
           </div>
           <div class="ball-rain" aria-hidden="true"></div>
@@ -577,9 +537,7 @@
           </figure>
           <div class="product-body">
             <h3>KIWI SPARK</h3>
-            <p class="product-highlight">
-              Premium Dates, Dried Kiwi, Dark Chocolate Chips.
-            </p>
+            <p class="product-calories-display">75 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -589,7 +547,6 @@
                 <li>Dried Kiwi</li>
                 <li>Dark Chocolate Chips</li>
               </ul>
-              <p class="calories">75 Kcal</p>
             </div>
           </div>
           <div class="ball-rain" aria-hidden="true"></div>
@@ -615,9 +572,7 @@
           </figure>
           <div class="product-body">
             <h3>DATE MUNCH</h3>
-            <p class="product-highlight">
-              Premium Dates, Cashew, Walnut, Pistachio Nuts.
-            </p>
+            <p class="product-calories-display">65 kcal</p>
             <button class="product-button" type="button" aria-expanded="false">
               See ingredients
             </button>
@@ -628,7 +583,6 @@
                 <li>Walnut</li>
                 <li>Pistachio Nuts</li>
               </ul>
-              <p class="calories">65 Kcal</p>
             </div>
           </div>
           <div class="ball-rain" aria-hidden="true"></div>
