@@ -115,23 +115,17 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         details.removeAttribute("hidden");
         details.classList.remove("closing");
-        // Reset animations for slide-in effect - ensure DOM is ready
-        setTimeout(() => {
-          const listItems = details.querySelectorAll(".ingredient-list li");
-          listItems.forEach((li) => {
-            li.style.animation = "none";
-            // Force reflow to reset animation
-            void li.offsetHeight;
-            li.style.animation = "";
-          });
-        }, 10);
+        // Immediately show the container, then animate items
         requestAnimationFrame(() => {
           details.classList.add("open");
+          // Trigger ball rain after a brief delay to not interfere
+          setTimeout(() => {
+            triggerBallRain(rainLayer, colors, imageSrc);
+          }, 50);
         });
         button.setAttribute("aria-expanded", "true");
         button.textContent = "Hide ingredients";
         button.classList.add("active");
-        triggerBallRain(rainLayer, colors, imageSrc);
       }
     });
   });
@@ -213,53 +207,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function triggerBallRain(container, colors, imageSrc) {
   if (!container) return;
-  console.debug("[PowerMunch] triggerBallRain()", {
-    container,
-    colorCount: colors?.length,
-    imageSrc,
+  
+  // Use requestAnimationFrame to prevent blocking
+  requestAnimationFrame(() => {
+    console.debug("[PowerMunch] triggerBallRain()", {
+      container,
+      colorCount: colors?.length,
+      imageSrc,
+    });
+    container.innerHTML = "";
+    const ballCount = 20; // Reduced for better performance
+
+    // Create balls in batches to prevent blocking
+    const createBalls = (startIndex, endIndex) => {
+      for (let i = startIndex; i < endIndex; i++) {
+        const useImage = Boolean(imageSrc);
+        const ball = document.createElement(useImage ? "img" : "span");
+        ball.className = useImage ? "ball ball-image" : "ball";
+
+        const size = 48 + Math.random() * 24;
+        const left = Math.random() * 100;
+        const delay = Math.random() * 0.3;
+        const duration = 1 + Math.random() * 0.5;
+        const drift = (Math.random() - 0.5) * 50;
+        const color =
+          colors[Math.floor(Math.random() * colors.length)] || "#ffffff";
+
+        ball.style.setProperty("--size", `${size}px`);
+        ball.style.setProperty("--x", `${left}%`);
+        ball.style.setProperty("--delay", `${delay}s`);
+        ball.style.setProperty("--duration", `${duration}s`);
+        ball.style.setProperty("--drift", `${drift}px`);
+        ball.style.setProperty("--ball-color", color);
+        ball.style.opacity = "0.95";
+
+        if (useImage) {
+          ball.src = imageSrc;
+          ball.alt = "";
+          ball.decoding = "async";
+          ball.loading = "lazy";
+        }
+
+        container.appendChild(ball);
+      }
+    };
+
+    // Create balls in smaller batches
+    const batchSize = 5;
+    let currentIndex = 0;
+    
+    const createNextBatch = () => {
+      if (currentIndex < ballCount) {
+        const endIndex = Math.min(currentIndex + batchSize, ballCount);
+        createBalls(currentIndex, endIndex);
+        currentIndex = endIndex;
+        if (currentIndex < ballCount) {
+          requestAnimationFrame(createNextBatch);
+        } else {
+          container.classList.add("show");
+          setTimeout(() => {
+            container.classList.remove("show");
+            setTimeout(() => {
+              container.innerHTML = "";
+            }, 600);
+          }, 1800);
+        }
+      }
+    };
+    
+    createNextBatch();
   });
-  container.innerHTML = "";
-  const ballCount = 24;
-
-  for (let i = 0; i < ballCount; i++) {
-    // Only image balls when an image is provided (e.g., choco-green)
-    const useImage = Boolean(imageSrc);
-    const ball = document.createElement(useImage ? "img" : "span");
-    ball.className = useImage ? "ball ball-image" : "ball";
-
-    const size = 48 + Math.random() * 24; // bigger for clearer visibility
-    const left = Math.random() * 100;
-    const delay = Math.random() * 0.35; // faster start cadence
-    const duration = 1 + Math.random() * 0.6; // quicker drop with slight variation
-    const drift = (Math.random() - 0.5) * 50;
-    const color =
-      colors[Math.floor(Math.random() * colors.length)] || "#ffffff";
-
-    ball.style.setProperty("--size", `${size}px`);
-    ball.style.setProperty("--x", `${left}%`);
-    ball.style.setProperty("--delay", `${delay}s`);
-    ball.style.setProperty("--duration", `${duration}s`);
-    ball.style.setProperty("--drift", `${drift}px`);
-    ball.style.setProperty("--ball-color", color);
-    ball.style.opacity = "0.95";
-
-    if (useImage) {
-      ball.src = imageSrc;
-      ball.alt = "";
-      ball.decoding = "async";
-    }
-
-    container.appendChild(ball);
-  }
-
-  console.debug("[PowerMunch] Balls appended", container.children.length);
-
-  container.classList.add("show");
-
-  setTimeout(() => {
-    container.classList.remove("show");
-    setTimeout(() => {
-      container.innerHTML = "";
-    }, 600);
-  }, 1800);
 }
