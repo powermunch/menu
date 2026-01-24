@@ -197,13 +197,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const bottomTabs = document.getElementById("product-tabs-bottom");
+
   tabButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const targetTab = button.dataset.tab;
 
-      // Update active button
+      // Update active button - remove active from all, then add to all buttons with same tab
       tabButtons.forEach((btn) => btn.classList.remove("active"));
-      button.classList.add("active");
+      tabButtons.forEach((btn) => {
+        if (btn.dataset.tab === targetTab) {
+          btn.classList.add("active");
+        }
+      });
 
       // Show/hide sections
       sections.forEach((section) => {
@@ -220,6 +226,22 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       updateTitle(targetTab);
+
+      // Show bottom tabs when a tab is active
+      if (bottomTabs) {
+        bottomTabs.style.display = "flex";
+      }
+
+      // Scroll to the section heading
+      const activeSection = document.querySelector(`[data-section="${targetTab}"]`);
+      if (activeSection) {
+        const sectionHeading = activeSection.querySelector(".section-heading");
+        if (sectionHeading) {
+          setTimeout(() => {
+            sectionHeading.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 100);
+        }
+      }
     });
   });
 
