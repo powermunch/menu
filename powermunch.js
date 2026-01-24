@@ -48,6 +48,34 @@ window.addEventListener("load", () => {
 document.addEventListener("DOMContentLoaded", () => {
   // Ensure page starts at top
   window.scrollTo(0, 0);
+
+  // Preload all ball images for instant display
+  const preloadBallImages = () => {
+    const ballImagePaths = [
+      "images/choco_green_ball.png",
+      "images/golden_spice_ball.png",
+      "images/coconut_cloud_ball.png",
+      "images/muddy_buddy_ball.png",
+      "images/snickers_ball.png",
+      "images/brownie_ball.png",
+      "images/mocha_ball.png",
+      "images/choco date_ball.png",
+      "images/cashew_crunch_ball.png",
+      "images/tropical_bliss_ball.png",
+      "images/choco_strawberry_ball.png",
+      "images/pineapple_crunsh_ball.png",
+      "images/dark_sun_ball.png",
+      "images/kiwi_spark_ball.png",
+      "images/date_munch_ball.png"
+    ];
+
+    ballImagePaths.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  };
+
+  preloadBallImages();
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
   
@@ -319,7 +347,7 @@ function triggerBallRain(container, colors, imageSrc) {
           ball.src = imageSrc;
           ball.alt = "";
           ball.decoding = "async";
-          ball.loading = "lazy";
+          // Images are preloaded, no lazy loading needed
         }
 
         container.appendChild(ball);
